@@ -33,7 +33,7 @@ export function Hero() {
           <Reveal delay={160}>
             <div className="h-px w-16 bg-primary" />
             <p className="max-w-xl text-base leading-relaxed text-[#6B7280] md:text-lg">
-              Uma estratégia de topo de funil para transformar a marca <span className="font-bold text-[#171717]">blis</span> na referência pública em uso medicinal regulado — com método, dado e previsibilidade, não com achismo de rede social.
+              Uma estratégia de topo de funil para transformar a marca <span className="font-bold text-[#171717]">blis</span> na referência pública em uso medicinal regulado, com método, dado e previsibilidade, não com achismo de rede social.
             </p>
           </Reveal>
         </div>

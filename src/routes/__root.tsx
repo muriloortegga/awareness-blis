@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "blis — Estratégia de Mídias Sociais" },
+      { title: "blis, Estratégia de Mídias Sociais" },
       {
         name: "description",
         content: "Apresentação estratégica de mídias sociais para healthtech de cannabis medicinal.",

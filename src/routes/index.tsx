@@ -17,7 +17,7 @@ import { Influenciadores } from "@/components/sections/Influenciadores";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { Fechamento } from "@/components/sections/Fechamento";
 
-const TITLE = "Estratégia de Mídias Sociais — Cannabis Medicinal Regulada";
+const TITLE = "Estratégia de Mídias Sociais, Cannabis Medicinal Regulada";
 const DESCRIPTION =
   "Estratégia de topo de funil para tornar a marca a referência pública em uso medicinal regulado de cannabis no Brasil: diagnóstico, canais, funil de conteúdo e medição.";
 
