@@ -1,4 +1,3 @@
-import { Logo } from "@/components/Logo";
 import { SECTIONS } from "@/lib/sections";
 
 export function Footer() {
@@ -12,7 +11,7 @@ export function Footer() {
           {/* Logo & Compliance Column */}
           <div className="space-y-6 lg:col-span-6">
             <div className="flex items-center gap-2 text-white">
-              <Logo className="h-7 w-auto" />
+              <img src="/brand/logo-white.svg" alt="blis" className="h-7 w-auto" />
             </div>
             
             {/* Regulatory compliance callout */}

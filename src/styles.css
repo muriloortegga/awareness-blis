@@ -204,8 +204,8 @@
   display: flex;
   width: max-content;
   animation: marquee 35s linear infinite;
-}
 
-@utility animate-marquee:hover {
-  animation-play-state: paused;
+  &:hover {
+    animation-play-state: paused;
+  }
 }

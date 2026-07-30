@@ -177,6 +177,7 @@ export function Metricas() {
                 {kr}
               </li>
             ))}
+          </ul>
         </div>
       </Reveal>
 
