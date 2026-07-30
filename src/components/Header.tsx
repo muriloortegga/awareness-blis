@@ -54,7 +54,7 @@ export function Header() {
           className="text-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
           aria-label="Voltar para o topo"
         >
-          <img src="/brand/logo.svg" alt="blis" className="h-6 w-auto" />
+          <img src="/brand/logo.svg" alt="blis" className="h-6 w-auto object-contain" />
         </a>
 
         {/* Right Side: Hamburger Menu Trigger */}

@@ -11,7 +11,7 @@ const CANAIS = [
     papel: "Hub central da estratégia.",
     fazer: "Reels de descoberta, carrossel educativo, Stories de bastidor e comunidade.",
     evitar:
-      "Preço, cupom, qualquer chamada direta de compra — é o gatilho nº1 de remoção de conteúdo, mesmo para marcas 100% legais.",
+      "Preço, cupom, qualquer chamada direta de compra, é o gatilho nº1 de remoção de conteúdo, mesmo para marcas 100% legais.",
   },
   {
     id: "tiktok",
@@ -20,14 +20,14 @@ const CANAIS = [
     papel: "Cultura e bem-estar, não o produto.",
     fazer: "Conteúdo de cultura, rotina e saúde mental, sem exposição visual de cannabis.",
     evitar:
-      "Qualquer imagem de planta, produto ou consumo — é a rede mais restritiva; contas já foram banidas do dia para a noite.",
+      "Qualquer imagem de planta, produto ou consumo, é a rede mais restritiva; contas já foram banidas do dia para a noite.",
   },
   {
     id: "youtube",
     nome: "YouTube",
     icon: Youtube,
     papel: "Autoridade de formato longo.",
-    fazer: "Vídeos explicativos e documentais, com relevância dupla — audiência de vídeo educativo e fonte citada por buscadores de IA.",
+    fazer: "Vídeos explicativos e documentais, com relevância dupla: audiência de vídeo educativo e fonte citada por buscadores de IA.",
     evitar: "Link direto de compra e monetização do vídeo.",
   },
   {
@@ -36,7 +36,7 @@ const CANAIS = [
     icon: Linkedin,
     papel: "Institucional e regulatório.",
     fazer: "Dado próprio, pauta de mercado, thought leadership do time médico e de liderança.",
-    evitar: "Tom de consumo — é canal de autoridade, não de conversão de paciente.",
+    evitar: "Tom de consumo, é canal de autoridade, não de conversão de paciente.",
   },
 ];
 
@@ -89,7 +89,7 @@ export function Canais() {
 
       <Reveal delay={80}>
         <p className="mt-8 text-xs leading-relaxed text-muted-foreground">
-          X e Reddit entram como canais complementares de nicho — participação genuína, não campanha.
+          X e Reddit entram como canais complementares de nicho, participação genuína, não campanha.
         </p>
       </Reveal>
     </Section>

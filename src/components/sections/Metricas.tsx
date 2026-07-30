@@ -1,6 +1,7 @@
 import { Eye, MousePointerClick, ArrowRightLeft, Link2, LineChart, Target } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { CpeSimulador } from "@/components/CpeSimulador";
 import {
   Table,
   TableBody,
@@ -17,7 +18,18 @@ const ETAPAS = [
     nome: "Consciência",
     itens: [
       "Alcance e impressões",
-      "Taxa de retenção de vídeo (referência de mercado: 52% em Reels/TikTok)",
+      <>
+        Taxa de retenção de vídeo (referência de mercado: 40%–55% em Reels/TikTok, segundo a{" "}
+        <a
+          href="https://retensis.com/blog/audience-retention-benchmarks-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline underline-offset-2 hover:opacity-80"
+        >
+          Retensis
+        </a>
+        )
+      </>,
       "Crescimento líquido de seguidores",
       "Share of voice frente aos concorrentes diretos",
     ],
@@ -28,7 +40,7 @@ const ETAPAS = [
     nome: "Consideração",
     itens: [
       "Taxa de engajamento",
-      "Salvamentos e compartilhamentos — o sinal mais forte para o algoritmo, mais forte que curtida",
+      "Salvamentos e compartilhamentos, o sinal mais forte para o algoritmo, mais forte que curtida",
       "Cliques para o link/bio",
       "Taxa de visita ao perfil",
     ],
@@ -91,7 +103,7 @@ export function Metricas() {
     <Section
       id="metricas"
       eyebrow="Medição e previsibilidade"
-      title="A pergunta não é 'engajou?'. É 'quanto custou cada engajamento — e dá para prever o próximo'."
+      title="A pergunta não é 'engajou?'. É 'quanto custou cada engajamento, e se dá para prever o próximo'."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {ETAPAS.map((e, i) => (
@@ -105,8 +117,8 @@ export function Metricas() {
               </p>
               <h3 className="mt-1 font-display text-lg font-bold text-[#171717]">{e.nome}</h3>
               <ul className="mt-5 space-y-3">
-                {e.itens.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                {e.itens.map((item, itemIdx) => (
+                  <li key={itemIdx} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
                     <span className="mt-2 h-px w-3 shrink-0 bg-primary" />
                     {item}
                   </li>
@@ -119,7 +131,7 @@ export function Metricas() {
 
       <Reveal delay={80}>
         <p className="mt-16 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-          Sem checkout próprio — a compra acontece fora da plataforma, depois de uma decisão médica —
+          Sem checkout próprio, com a compra acontecendo fora da plataforma depois de uma decisão médica,
           a régua certa <strong className="font-extrabold text-[#171717]">nunca é custo por venda</strong>. É custo por atenção qualificada: CPM (custo por
           mil), CPE (custo por engajamento), CPC (custo por clique qualificado), custo por download,
           custo por agendamento iniciado.
@@ -138,7 +150,7 @@ export function Metricas() {
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Link único (UTM) por criador e por campanha, redirecionamento rastreável para a loja de
               app, cupom de desconto na consulta atrelado ao agendamento. Cada criador e cada peça de
-              mídia paga gera um número — não uma impressão.
+              mídia paga gera um número, não uma impressão.
             </p>
           </div>
         </Reveal>
@@ -153,11 +165,15 @@ export function Metricas() {
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Benchmarking contínuo de CPE por pilar de conteúdo e por camada de criador (nano,
               micro, médico-criador), atualizado campanha a campanha. Isso transforma orçamento de
-              mídia em decisão orientada por histórico — não em aposta.
+              mídia em decisão orientada por histórico, não em aposta.
             </p>
           </div>
         </Reveal>
       </div>
+
+      <Reveal delay={90}>
+        <CpeSimulador />
+      </Reveal>
 
       <Reveal delay={60}>
         <div className="mt-8 rounded-2xl bg-primary p-8 text-white md:p-10 shadow-md">
