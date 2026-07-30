@@ -48,71 +48,29 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-[1120px] items-center justify-between">
-        {/* Left Side: Logo & Main Navigation */}
-        <div className="flex items-center gap-12">
-          <a
-            href="#abertura"
-            className="text-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
-            aria-label="Voltar para o topo"
-          >
-            <img src="/brand/logo.svg" alt="blis" className="h-6 w-auto" />
-          </a>
+        {/* Left Side: Logo */}
+        <a
+          href="#abertura"
+          className="text-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
+          aria-label="Voltar para o topo"
+        >
+          <img src="/brand/logo.svg" alt="blis" className="h-6 w-auto" />
+        </a>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden lg:block">
-            <ul className="flex items-center gap-6">
-              {navItems.map((item) => {
-                const isActive = active === item.id;
-                return (
-                  <li key={item.id}>
-                    <a
-                      href={`#${item.id}`}
-                      className={cn(
-                        "text-xs font-semibold tracking-wide transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 py-0.5",
-                        isActive ? "text-primary" : "text-muted-foreground"
-                      )}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-
-        {/* Right Side: Lang Selector, CTA, and Mobile Menu Trigger */}
-        <div className="flex items-center gap-6">
-          {/* Language Selector */}
-          <div className="hidden sm:flex items-center gap-2 text-[0.7rem] font-bold tracking-wider text-muted-foreground">
-            <button className="text-primary hover:text-primary font-extrabold focus:outline-none">PT</button>
-            <span className="text-border">|</span>
-            <button className="hover:text-primary transition-colors focus:outline-none">EN</button>
-          </div>
-
-          {/* Primary CTA (Pill Button) */}
-          <a
-            href="#roadmap"
-            className="hidden sm:inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-xs font-bold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          >
-            Entrar em Contato
-          </a>
-
-          {/* Mobile Menu Trigger */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground hover:bg-muted lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-          >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
+        {/* Right Side: Hamburger Menu Trigger */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+        >
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[60px] z-40 bg-background/95 backdrop-blur-md lg:hidden animate-in fade-in slide-in-from-top-4 duration-200">
-          <nav className="flex flex-col p-6 h-full justify-between">
+        <div className="fixed inset-0 top-[60px] z-40 bg-background/95 backdrop-blur-md animate-in fade-in slide-in-from-top-4 duration-200">
+          <nav className="flex flex-col p-6">
             <ul className="flex flex-col gap-5">
               {navItems.map((item) => {
                 const isActive = active === item.id;
@@ -132,20 +90,6 @@ export function Header() {
                 );
               })}
             </ul>
-            <div className="flex flex-col gap-4 border-t border-border/60 pt-6 pb-20">
-              <div className="flex items-center gap-3 justify-center text-xs font-bold tracking-wider text-muted-foreground">
-                <button className="text-primary font-extrabold">PT</button>
-                <span className="text-border">|</span>
-                <button className="hover:text-primary">EN</button>
-              </div>
-              <a
-                href="#roadmap"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex w-full items-center justify-center rounded-full bg-primary py-3 text-sm font-bold text-primary-foreground transition-all active:scale-[0.98]"
-              >
-                Entrar em Contato
-              </a>
-            </div>
           </nav>
         </div>
       )}
