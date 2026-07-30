@@ -25,22 +25,22 @@ export function Diagnostico() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {STATS.map((stat, i) => (
           <Reveal key={stat.value} delay={i * 70}>
-            <Card className="h-full border-border/70 bg-card/80 shadow-none">
+            <Card className="h-full border-border/60 bg-white rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md">
               <CardContent className="flex h-full flex-col gap-4 p-6">
-                <p className="text-3xl font-bold tabular-nums text-primary lg:text-[2.1rem]">
+                <p className="text-3xl font-extrabold tracking-tight tabular-nums text-primary lg:text-4xl">
                   {stat.value}
                 </p>
-                <p className="text-sm leading-relaxed text-muted-foreground">{stat.label}</p>
+                <p className="text-xs font-semibold leading-relaxed text-muted-foreground uppercase tracking-wider">{stat.label}</p>
               </CardContent>
             </Card>
           </Reveal>
         ))}
       </div>
       <Reveal delay={120}>
-        <p className="mt-12 max-w-2xl border-l-2 border-accent pl-6 text-sm leading-relaxed text-foreground md:text-base">
+        <p className="mt-12 max-w-2xl border-l-2 border-primary pl-6 text-sm leading-relaxed text-muted-foreground md:text-base">
           Saúde e bem-estar é o 2º tema mais popular do Instagram brasileiro. Mas quem fala de
-          cannabis, hoje, fala de militância, cultivo ou lifestyle recreativo — não do caminho legal,
-          regulado e seguro. Esse território está praticamente vazio. É nele que a estratégia a
+          cannabis, hoje, fala de militância, cultivo ou lifestyle recreativo — <strong className="font-extrabold text-[#171717]">não do caminho legal,
+          regulado e seguro</strong>. Esse território está praticamente vazio. É nele que a estratégia a
           seguir foi desenhada para atuar primeiro.
         </p>
       </Reveal>

@@ -44,11 +44,11 @@ function Linha({ rotulo, texto, accent }: { rotulo: string; texto: string; accen
   return (
     <div className="border-t border-border pt-4">
       <p
-        className={`mb-2 text-[0.65rem] font-medium tracking-[0.2em] uppercase ${accent ? "text-accent" : "text-muted-foreground"}`}
+        className={`mb-2 text-[0.65rem] font-bold tracking-[0.2em] uppercase ${accent ? "text-primary/90" : "text-muted-foreground"}`}
       >
         {rotulo}
       </p>
-      <p className="text-sm leading-relaxed text-foreground">{texto}</p>
+      <p className="text-sm leading-relaxed text-muted-foreground">{texto}</p>
     </div>
   );
 }
@@ -58,23 +58,23 @@ export function Canais() {
     <Section id="canais" eyebrow="Canais" title="Mesma mensagem, quatro lógicas diferentes.">
       <Reveal>
         <Tabs defaultValue="instagram" className="w-full gap-8">
-          <TabsList className="h-auto w-full flex-wrap justify-start gap-1 bg-secondary/60 p-1">
+          <TabsList className="h-auto w-full flex-wrap justify-start gap-1 bg-secondary/40 p-1.5 rounded-full border border-border/50 max-w-xl">
             {CANAIS.map((c) => (
               <TabsTrigger
                 key={c.id}
                 value={c.id}
-                className="cursor-pointer gap-2 px-4 py-2 text-sm data-[state=active]:bg-card data-[state=active]:text-primary"
+                className="cursor-pointer gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white text-muted-foreground"
               >
-                <c.icon className="h-4 w-4" strokeWidth={1.5} />
+                <c.icon className="h-3.5 w-3.5" strokeWidth={1.8} />
                 {c.nome}
               </TabsTrigger>
             ))}
           </TabsList>
 
           {CANAIS.map((c) => (
-            <TabsContent key={c.id} value={c.id}>
-              <div className="rounded-lg border border-border bg-card p-6 md:p-10">
-                <h3 className="font-display text-xl font-semibold text-primary md:text-2xl">
+            <TabsContent key={c.id} value={c.id} className="mt-6">
+              <div className="rounded-2xl border border-border bg-white p-6 md:p-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <h3 className="font-display text-xl font-bold text-[#171717] md:text-2xl">
                   {c.papel}
                 </h3>
                 <div className="mt-8 grid gap-8 md:grid-cols-2">

@@ -35,18 +35,22 @@ const CONSTRUIR = [
 function Column({ title, items, accent }: { title: string; items: typeof HOJE; accent?: boolean }) {
   return (
     <div>
-      <h3 className="mb-8 flex items-center gap-3 text-xs font-medium tracking-[0.22em] uppercase">
-        <span className={accent ? "text-accent" : "text-primary"}>{title}</span>
-        <span className={`h-px flex-1 ${accent ? "bg-accent/40" : "bg-primary/20"}`} />
+      <h3 className="mb-8 flex items-center gap-3 text-xs font-bold tracking-[0.22em] uppercase">
+        <span className={accent ? "text-primary" : "text-primary"}>{title}</span>
+        <span className="h-px flex-1 bg-primary/20" />
       </h3>
-      <ul className="space-y-7">
+      <ul className="space-y-6">
         {items.map((item, i) => (
-          <Reveal as="li" key={item.text} delay={i * 70} className="flex gap-4">
-            <item.icon
-              className={`mt-0.5 h-5 w-5 shrink-0 ${accent ? "text-accent" : "text-primary"}`}
-              strokeWidth={1.4}
-            />
-            <p className="text-sm leading-relaxed text-foreground md:text-[0.95rem]">{item.text}</p>
+          <Reveal as="li" key={item.text} delay={i * 70} className="flex gap-4 items-start">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary text-primary shadow-sm">
+              <item.icon
+                className="h-4 w-4"
+                strokeWidth={1.8}
+              />
+            </div>
+            <p className="text-sm leading-relaxed text-muted-foreground md:text-[0.95rem] pt-1">
+              {item.text}
+            </p>
           </Reveal>
         ))}
       </ul>

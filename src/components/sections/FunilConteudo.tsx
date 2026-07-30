@@ -80,9 +80,9 @@ export function FunilConteudo() {
       </div>
 
       <Reveal delay={100}>
-        <p className="mt-12 max-w-2xl border-l-2 border-accent pl-6 text-sm leading-relaxed text-foreground md:text-base">
-          Antes de decidir se tratar, a pessoa precisa primeiro acreditar que existe um caminho
-          legal, sério e possível. Esse funil constrói essa crença — etapa por etapa, formato por
+        <p className="mt-12 max-w-2xl border-l-2 border-primary pl-6 text-sm leading-relaxed text-muted-foreground md:text-base">
+          Antes de decidir se tratar, a pessoa precisa primeiro <strong className="font-extrabold text-[#171717]">acreditar que existe um caminho
+          legal, sério e possível</strong>. Esse funil constrói essa crença — etapa por etapa, formato por
           formato.
         </p>
       </Reveal>

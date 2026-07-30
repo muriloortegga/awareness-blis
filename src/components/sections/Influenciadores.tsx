@@ -37,12 +37,14 @@ export function Influenciadores() {
       eyebrow="Influenciadores e UGC"
       title="Quem fala pela marca — e como isso fica dentro da lei."
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         {BLOCOS.map((b, i) => (
           <Reveal key={b.titulo} delay={i * 70}>
-            <div className="h-full border-t border-border pt-6">
-              <b.icon className="h-5 w-5 text-accent" strokeWidth={1.4} />
-              <h3 className="mt-4 font-display text-base font-semibold text-primary md:text-lg">
+            <div className="h-full rounded-2xl border border-border/60 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-secondary text-primary shadow-sm mb-4">
+                <b.icon className="h-4.5 w-4.5" strokeWidth={1.8} />
+              </div>
+              <h3 className="font-display text-base font-bold text-[#171717] md:text-lg">
                 {b.titulo}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.texto}</p>

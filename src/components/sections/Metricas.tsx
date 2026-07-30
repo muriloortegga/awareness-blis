@@ -96,16 +96,18 @@ export function Metricas() {
       <div className="grid gap-6 md:grid-cols-3">
         {ETAPAS.map((e, i) => (
           <Reveal key={e.etapa} delay={i * 80}>
-            <div className="flex h-full flex-col rounded-lg border border-border bg-card p-6">
-              <e.icon className="h-5 w-5 text-accent" strokeWidth={1.4} />
-              <p className="mt-5 text-[0.65rem] font-medium tracking-[0.2em] text-muted-foreground uppercase">
+            <div className="flex h-full flex-col rounded-2xl border border-border/60 bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary text-primary shadow-sm">
+                <e.icon className="h-5 w-5" strokeWidth={1.8} />
+              </div>
+              <p className="mt-5 text-[0.65rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
                 {e.etapa}
               </p>
-              <h3 className="mt-1 font-display text-lg font-semibold text-primary">{e.nome}</h3>
+              <h3 className="mt-1 font-display text-lg font-bold text-[#171717]">{e.nome}</h3>
               <ul className="mt-5 space-y-3">
                 {e.itens.map((item) => (
                   <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                    <span className="mt-2 h-px w-3 shrink-0 bg-accent" />
+                    <span className="mt-2 h-px w-3 shrink-0 bg-primary" />
                     {item}
                   </li>
                 ))}
@@ -116,9 +118,9 @@ export function Metricas() {
       </div>
 
       <Reveal delay={80}>
-        <p className="mt-16 max-w-3xl text-sm leading-relaxed text-foreground md:text-base">
+        <p className="mt-16 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
           Sem checkout próprio — a compra acontece fora da plataforma, depois de uma decisão médica —
-          a régua certa nunca é custo por venda. É custo por atenção qualificada: CPM (custo por
+          a régua certa <strong className="font-extrabold text-[#171717]">nunca é custo por venda</strong>. É custo por atenção qualificada: CPM (custo por
           mil), CPE (custo por engajamento), CPC (custo por clique qualificado), custo por download,
           custo por agendamento iniciado.
         </p>
@@ -126,9 +128,11 @@ export function Metricas() {
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <Reveal>
-          <div className="h-full rounded-lg border border-primary/15 bg-secondary/50 p-6 md:p-8">
-            <Link2 className="h-5 w-5 text-primary" strokeWidth={1.4} />
-            <h3 className="mt-4 font-display text-base font-semibold text-primary">
+          <div className="h-full rounded-2xl border border-primary/10 bg-secondary/30 p-6 md:p-8 hover:bg-secondary/45 transition-all duration-300">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary shadow-sm">
+              <Link2 className="h-4.5 w-4.5" strokeWidth={1.8} />
+            </div>
+            <h3 className="mt-4 font-display text-base font-bold text-[#171717]">
               Rastreamento sem checkout próprio
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -139,9 +143,11 @@ export function Metricas() {
           </div>
         </Reveal>
         <Reveal delay={80}>
-          <div className="h-full rounded-lg border border-primary/15 bg-secondary/50 p-6 md:p-8">
-            <LineChart className="h-5 w-5 text-primary" strokeWidth={1.4} />
-            <h3 className="mt-4 font-display text-base font-semibold text-primary">
+          <div className="h-full rounded-2xl border border-primary/10 bg-secondary/30 p-6 md:p-8 hover:bg-secondary/45 transition-all duration-300">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary shadow-sm">
+              <LineChart className="h-4.5 w-4.5" strokeWidth={1.8} />
+            </div>
+            <h3 className="mt-4 font-display text-base font-bold text-[#171717]">
               Previsibilidade de custo
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -154,34 +160,34 @@ export function Metricas() {
       </div>
 
       <Reveal delay={60}>
-        <div className="mt-8 rounded-lg border-l-4 border-accent bg-primary p-8 text-primary-foreground md:p-10">
+        <div className="mt-8 rounded-2xl bg-primary p-8 text-white md:p-10 shadow-md">
           <div className="flex items-center gap-3">
-            <Target className="h-5 w-5 text-accent" strokeWidth={1.4} />
-            <p className="text-[0.65rem] font-medium tracking-[0.22em] uppercase opacity-80">
+            <Target className="h-5 w-5 text-white" strokeWidth={1.8} />
+            <p className="text-[0.65rem] font-bold tracking-[0.22em] uppercase text-white/80">
               Exemplo de OKR
             </p>
           </div>
-          <p className="mt-5 max-w-2xl font-display text-lg leading-snug font-semibold md:text-xl">
+          <p className="mt-5 max-w-2xl font-display text-lg leading-snug font-extrabold md:text-2xl">
             Tornar a marca a referência pública em uso medicinal regulado de cannabis no Brasil.
           </p>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
+          <ul className="mt-8 grid gap-4 md:grid-cols-2 border-t border-white/20 pt-6">
             {OKRS.map((kr) => (
-              <li key={kr} className="text-sm leading-relaxed opacity-90">
+              <li key={kr} className="flex gap-3 text-sm leading-relaxed text-white/90">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white" />
                 {kr}
               </li>
             ))}
-          </ul>
         </div>
       </Reveal>
 
       <Reveal delay={60}>
-        <div className="mt-12 overflow-hidden rounded-lg border border-border bg-card">
+        <div className="mt-12 overflow-hidden rounded-2xl border border-border/60 bg-white shadow-sm">
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent">
-                <TableHead className="text-primary">Métrica</TableHead>
-                <TableHead className="text-primary">O que mede</TableHead>
-                <TableHead className="text-primary">Por que importa</TableHead>
+                <TableHead className="text-primary font-extrabold text-xs uppercase tracking-wider">Métrica</TableHead>
+                <TableHead className="text-primary font-extrabold text-xs uppercase tracking-wider">O que mede</TableHead>
+                <TableHead className="text-primary font-extrabold text-xs uppercase tracking-wider">Por que importa</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
