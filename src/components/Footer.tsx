@@ -11,7 +11,7 @@ export function Footer() {
           {/* Logo & Compliance Column */}
           <div className="space-y-6 lg:col-span-6">
             <div className="flex items-center gap-2 text-white">
-              <img src="/brand/logo-white.svg" alt="blis" className="h-7 w-auto object-contain" />
+              <img src="/brand/logo-white.png" alt="blis" className="h-7 w-auto object-contain" />
             </div>
             
             {/* Regulatory compliance callout */}
