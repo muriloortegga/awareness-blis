@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { SECTIONS } from "@/lib/sections";
-import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
@@ -56,7 +55,7 @@ export function Header() {
             className="text-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
             aria-label="Voltar para o topo"
           >
-            <Logo className="h-6 w-auto text-[#171717]" />
+            <img src="/brand/logo.svg" alt="blis" className="h-6 w-auto" />
           </a>
 
           {/* Desktop Nav Items */}

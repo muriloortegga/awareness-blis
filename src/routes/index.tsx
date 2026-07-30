@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { SideNav } from "@/components/SideNav";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Marquee } from "@/components/Marquee";
+import { StickyCTA } from "@/components/StickyCTA";
 import { Hero } from "@/components/sections/Hero";
 import { Diagnostico } from "@/components/sections/Diagnostico";
 import { Publico } from "@/components/sections/Publico";
@@ -35,19 +39,25 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="bg-background text-foreground">
-      <ReadingProgress />
-      <SideNav />
-      <Hero />
-      <Diagnostico />
-      <Publico />
-      <Ativos />
-      <Canais />
-      <FunilConteudo />
-      <Metricas />
-      <Influenciadores />
-      <Roadmap />
-      <Fechamento />
-    </main>
+    <>
+      <Header />
+      <main className="bg-background text-foreground">
+        <ReadingProgress />
+        <SideNav />
+        <Hero />
+        <Marquee />
+        <Diagnostico />
+        <Publico />
+        <Ativos />
+        <Canais />
+        <FunilConteudo />
+        <Metricas />
+        <Influenciadores />
+        <Roadmap />
+        <Fechamento />
+      </main>
+      <Footer />
+      <StickyCTA />
+    </>
   );
 }

@@ -1,17 +1,26 @@
 # Pasta de Marca — blis (Logotipos)
 
-Esta pasta foi criada especificamente para centralizar os ativos visuais de logotipo da marca **blis**.
+Esta pasta centraliza os arquivos de logotipo usados no **header** (topo, canto esquerdo) e no **footer** do site. O código já aponta para os arquivos abaixo — basta substituí-los pelos arquivos oficiais da marca, sem precisar mexer em nenhum componente.
 
-## Arquivo Atual
-- `logo.svg`: Um arquivo provisório baseado em texto (vetorizado) que desenha a wordmark **"blis"** na fonte *Plus Jakarta Sans* com o pingo do "i" colorido no verde esmeralda da marca (`#1FA34A`). O corpo da palavra herda `currentColor` para se adaptar automaticamente a fundos claros (ficando grafite/charcoal) ou escuros (ficando branco/cinza claro).
+## Arquivos esperados
 
-## Como substituir pelo logotipo oficial da sua marca:
+| Arquivo | Onde é usado | Fundo |
+|---|---|---|
+| `logo.svg` | Header (topo do site) | Claro (branco/transparente) |
+| `logo-white.svg` | Footer (rodapé) | Escuro (grafite `#171717`) |
 
-### Opção A: Substituir por um SVG Oficial (Recomendado)
-1. Salve o seu arquivo SVG com o nome exato de `logo.svg`.
-2. Substitua o arquivo existente nesta pasta pelo seu novo arquivo.
-3. Para garantir que o logo se adapte a fundos claros e escuros no header e footer do site, certifique-se de que os elementos vetoriais que devem mudar de cor usem `fill="currentColor"` ou `stroke="currentColor"`, e os elementos que devem reter a cor da marca (como o verde do "i") usem `#1FA34A` diretamente.
+Os dois arquivos atuais são placeholders provisórios (wordmark "blis" em *Plus Jakarta Sans*, com o pingo do "i" no verde da marca `#1FA34A`) — um na versão grafite (para o header) e outro na versão branca (para o footer).
 
-### Opção B: Substituir por uma imagem PNG
-1. Coloque seus arquivos de imagem nesta pasta (ex: `logo-light.png` para fundos claros e `logo-dark.png` para fundos escuros).
-2. No código do Header ([Header.tsx](file:///Users/muriloortega/Desktop/SITES/Awareness%20Blis/awareness-blis/src/components/Header.tsx)) e do Footer ([Footer.tsx](file:///Users/muriloortega/Desktop/SITES/Awareness%20Blis/awareness-blis/src/components/Footer.tsx)), altere as tags `<img>` ou os componentes `<svg>` para apontar para os caminhos corretos (ex: `/brand/logo-light.png`).
+## Como substituir pelo logotipo oficial
+
+### Opção A: SVG (recomendado)
+1. Exporte o logotipo oficial em duas versões: uma para fundo claro e outra para fundo escuro (ou a mesma arte, se ela já funcionar em ambos os casos).
+2. Salve-as substituindo exatamente `logo.svg` (header) e `logo-white.svg` (footer) nesta pasta.
+3. Pronto — o header e o footer atualizam automaticamente, pois ambos carregam a imagem direto destes arquivos.
+
+### Opção B: PNG ou JPG
+1. Coloque os arquivos nesta pasta (ex: `logo.png` e `logo-white.png`).
+2. Abra [`src/components/Header.tsx`](../../src/components/Header.tsx) e [`src/components/Footer.tsx`](../../src/components/Footer.tsx) e troque a extensão do `src` da tag `<img>` de `.svg` para `.png` (ou `.jpg`).
+
+## Dica de proporção
+Os placeholders usam proporção ~95×36 (largura×altura). Uma logo com proporção muito diferente pode ficar desalinhada — ajuste a altura da classe `h-6` (header) ou `h-7` (footer) na tag `<img>` se necessário.
